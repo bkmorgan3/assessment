@@ -1,8 +1,9 @@
+import Header from "../components/Header";
 
 export default function FormPage() {
     return (
         <div className="">
-            The Form Page
+            <Header />
         </div>
     )
 }
