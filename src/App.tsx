@@ -1,11 +1,11 @@
-import { useState } from 'react'
+import FormPage from "./pages/FormPage"
 
 function App() {
-  const [count, setCount] = useState(10)
 
   return (
     <>
-      Hi
+    <h1 className="text-3xl">HI</h1>
+      <FormPage />
     </>
   )
 }
