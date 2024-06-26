@@ -11,7 +11,7 @@ export const CheckboxSection = ({checked, setChecked}: CheckboxProps) => {
             <h2 className="mb-4 text-2xl">Section Title</h2>
             <p className="font-bold text-sm">Select all borrowers that were impacted by the disaster</p>
 
-            <CheckboxGroup.Root defaultValue={['2']}>
+            <CheckboxGroup.Root>
                 <CheckboxGroup.Item value="1">Alice J Firstimer</CheckboxGroup.Item>
                 <CheckboxGroup.Item value="2">Janet P Secondtimer</CheckboxGroup.Item>
                 <CheckboxGroup.Item value="3">John H OldTimer</CheckboxGroup.Item>
