@@ -1,9 +1,13 @@
+import Footer from "../components/Footer";
+import Form from "../components/Form";
 import Header from "../components/Header";
 
 export default function FormPage() {
     return (
-        <div className="">
+        <main className="bg-gray-50">
             <Header />
-        </div>
+            <Form />
+            <Footer />
+        </main>
     )
 }
