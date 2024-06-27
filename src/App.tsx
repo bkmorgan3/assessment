@@ -1,8 +1,7 @@
-import '@radix-ui/themes/styles.css';
-import FormPage from "./pages/FormPage"
+import '@radix-ui/themes/styles.css'
+import FormPage from './pages/FormPage'
 
 function App() {
-
   return (
     <>
       <FormPage />
