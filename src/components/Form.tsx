@@ -1,8 +1,7 @@
 import { CheckboxSection } from './CheckboxSection'
 import { EscrowSection } from './EscrowSection'
-import { NameSection } from './NameSection'
+import { PersonalInfoSection } from './PersonalInfoSection'
 import { SubmitSection } from './Submit'
-import { Button } from '@radix-ui/themes'
 
 type Borrower = {
   name: string
@@ -30,25 +29,28 @@ export default function Form({
   selectedBorrowers,
   setSelectedBorrowers,
 }: FormProps) {
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
-    console.log('hi', name, selectedBorrowers, value, selected)
+    console.log(selectedBorrowers, name, value, selected)
   }
   return (
     <>
-      <form className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start">
+      <form
+        onSubmit={handleSubmit}
+        className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start"
+      >
         <CheckboxSection
           selectedBorrowers={selectedBorrowers}
           setSelectedBorrowers={setSelectedBorrowers}
         />
-        <NameSection
+        <PersonalInfoSection
           name={name}
           setName={setName}
           value={value}
           setValue={setValue}
         />
         <EscrowSection selected={selected} setSelected={setSelected} />
-        <SubmitSection onSubmit={handleSubmit} />
+        <SubmitSection />
       </form>
     </>
   )

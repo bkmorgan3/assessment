@@ -13,14 +13,14 @@ export const EscrowSection = ({ selected, setSelected }: EscrowProps) => {
       <p className="font-bold text-xs mb-4">Escrow Status</p>
 
       <RadioGroup.Root className="flex flex-col" onValueChange={setSelected}>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div style={{ display: 'flex', alignItems: 'center' }} className="mb-2">
           <RadioGroup.Item
-            className="w-[25px] h-[25px] rounded-full border-2 border-gray-200/100 border-solid"
+            className="w-[18px] h-[18px] rounded-full border-2 border-indigo-500/100 border-solid"
             value="escrowed"
             id="r1"
           >
             <RadioGroup.Indicator
-              className={`flex justify-center items-center after:content-[''] ${selected && 'after:block after:w-[11px] after:h-[11px] after:rounded-full after:bg-black'}`}
+              className={`flex justify-center items-center after:content-[''] ${selected && 'after:block after:w-[8px] after:h-[8px] after:rounded-full after:bg-indigo-700/100'}`}
             />
           </RadioGroup.Item>
           <Label.Root className="pl-2" htmlFor="r1">
@@ -29,12 +29,12 @@ export const EscrowSection = ({ selected, setSelected }: EscrowProps) => {
         </div>
         <div style={{ display: 'flex', alignItems: 'center' }}>
           <RadioGroup.Item
-            className="w-[25px] h-[25px] rounded-full border-2 border-gray-200/100 border-solid"
+            className="w-[18px] h-[18px] rounded-full border-2 border-indigo-500/100 border-solid"
             value="non-escrowed"
             id="r2"
           >
             <RadioGroup.Indicator
-              className={`flex justify-center items-center after:content-[''] ${selected && 'after:block after:w-[11px] after:h-[11px] after:rounded-full after:bg-black'}`}
+              className={`flex justify-center items-center after:content-[''] ${selected && 'after:block after:w-[8px] after:h-[8px] after:rounded-full after:bg-indigo-700/100'}`}
             />
           </RadioGroup.Item>
           <Label.Root className="pl-2" htmlFor="r2">

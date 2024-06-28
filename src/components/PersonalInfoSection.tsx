@@ -15,7 +15,7 @@ type NameSectionProps = {
   setValue: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const NameSection = ({
+export const PersonalInfoSection = ({
   name,
   setName,
   value,
