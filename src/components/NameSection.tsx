@@ -24,8 +24,8 @@ export const NameSection = ({
   return (
     <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[580px] px-8 py-4 grow">
       <h2 className="mb-4 text-2xl">Section Title</h2>
-      <div className="flex flex-col xl:flex-row xl:justify-between">
-        <div className="xl:w-1/2 xl:mr-2">
+      <div className="flex flex-col 2xl:flex-row xl:justify-between">
+        <div className="2xl:w-1/2 xl:mr-2">
           <Label.Root htmlFor="name">Name</Label.Root>
           <TextField.Root
             onChange={(e) => setName(e.target.value)}
@@ -35,7 +35,7 @@ export const NameSection = ({
           ></TextField.Root>
         </div>
 
-        <div className="xl:w-1/2">
+        <div className="2xl:w-1/2">
           <Label.Root htmlFor="category">Category</Label.Root>
           <Flex maxWidth="100%">
             <Select.Root value={value} onValueChange={setValue}>
