@@ -14,9 +14,6 @@ export const CheckboxSection = ({
   setIsChecked,
 }: CheckboxProps) => {
   const handleOnChange = (place: number) => {
-    console.log(borrowers[place])
-    console.log(!isChecked[place])
-
     const updateCheckState = isChecked.map((check, i) =>
       i === place ? !check : check,
     )

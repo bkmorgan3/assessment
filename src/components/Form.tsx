@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { CheckboxSection } from './CheckboxSection'
 import { EscrowSection } from './EscrowSection'
 import { NameSection } from './NameSection'
@@ -7,22 +6,17 @@ import { SubmitSection } from './Submit'
 type FormProps = {
   name: string
   setName: React.Dispatch<React.SetStateAction<string>>
+  borrowers: string[]
+  isChecked: boolean[]
+  value: string
+  selected: string
+  setIsChecked: React.Dispatch<React.SetStateAction<any[]>>
+  setValue: React.Dispatch<React.SetStateAction<string>>
+  setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
-export default function Form({ name, setName }: FormProps) {
-  const borrowers = [
-    'Alice J Firstimer',
-    'Janet P Secondtimer',
-    'John H Oldtimer',
-  ]
-
-  const [isChecked, setIsChecked] = useState(
-    new Array(borrowers.length).fill(false),
-  )
-  const [value, setValue] = useState('')
-
-  const [selected, setSelected] = useState('')
-  console.log(selected)
+export default function Form({ name, setName, borrowers, isChecked, value, selected, setSelected, setIsChecked, setValue }: FormProps) {
+ 
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
@@ -37,7 +31,7 @@ export default function Form({ name, setName }: FormProps) {
           setIsChecked={setIsChecked}
         />
         <NameSection name={name} setName={setName} value={value} setValue={setValue} />
-        <EscrowSection selected={selected} setSelected={setSelected} />
+        <EscrowSection setSelected={setSelected} />
         <SubmitSection onSubmit={handleSubmit} />
       </form>
     </div>
