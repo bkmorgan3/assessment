@@ -4,7 +4,7 @@ import Header from '../components/Header'
 
 export default function FormPage() {
   const [name, setName] = useState('')
-   const borrowers = [
+  const borrowers = [
     'Alice J Firstimer',
     'Janet P Secondtimer',
     'John H Oldtimer',
@@ -20,17 +20,17 @@ export default function FormPage() {
   return (
     <main className="h-screen bg-gray-50  flex flex-col">
       <Header setName={setName} />
-      <Form 
-        borrowers={borrowers} 
-        isChecked={isChecked} 
-        setIsChecked={setIsChecked} 
-        name={name} 
-        setName={setName}  
+      <Form
+        borrowers={borrowers}
+        isChecked={isChecked}
+        setIsChecked={setIsChecked}
+        name={name}
+        setName={setName}
         selected={selected}
         setSelected={setSelected}
         value={value}
         setValue={setValue}
-        />
+      />
     </main>
   )
 }

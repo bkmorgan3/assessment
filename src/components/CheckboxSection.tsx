@@ -40,7 +40,7 @@ export const CheckboxSection = ({
                 <CheckIcon />
               </Checkbox.Indicator>
             </Checkbox.Root>
-            <Label.Root  className="mb-0.5">{borrower}</Label.Root>
+            <Label.Root className="mb-0.5">{borrower}</Label.Root>
           </div>
         )
       })}
