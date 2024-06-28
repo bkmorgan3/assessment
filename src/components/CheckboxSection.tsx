@@ -27,7 +27,7 @@ export const CheckboxSection = ({
   }
 
   return (
-    <section className="m-auto bg-white rounded-lg mt-6 max-w-[880px] min-w-[580px] px-8 py-4">
+    <section className="m-auto grow bg-white rounded-lg mt-6 max-w-[880px] min-w-[580px] px-8 py-4">
       <h2 className="mb-4 text-2xl">Section Title</h2>
       <p className="font-bold text-sm mb-4">
         Select all borrowers that were impacted by the disaster

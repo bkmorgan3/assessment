@@ -8,7 +8,7 @@ type EscrowProps = {
 
 export const EscrowSection = ({ selected, setSelected }: EscrowProps) => {
   return (
-    <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[580px] px-8 py-4 mb-4">
+    <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[580px] px-8 py-4 mb-4 grow">
       <h2 className="text-2xl mb-4">Section Title</h2>
       <p className="font-bold text-xs mb-4">Escrow Status</p>
 

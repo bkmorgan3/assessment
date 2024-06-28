@@ -36,14 +36,7 @@ export default function Form({
   }
   return (
     <>
-      {/* <div
-        style={{ border: '1px solid green' }}
-        className="h-full max-w-[880px] min-w-[560px] self-center"
-      > */}
-      <form
-        style={{ border: '1px solid red' }}
-        className="h-full full max-w-[880px] min-w-[560px]"
-      >
+      <form className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start">
         <CheckboxSection
           selectedBorrowers={selectedBorrowers}
           setSelectedBorrowers={setSelectedBorrowers}
@@ -57,7 +50,6 @@ export default function Form({
         <EscrowSection selected={selected} setSelected={setSelected} />
         <SubmitSection onSubmit={handleSubmit} />
       </form>
-      {/* </div> */}
     </>
   )
 }
