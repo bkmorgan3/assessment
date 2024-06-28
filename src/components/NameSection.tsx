@@ -46,7 +46,7 @@ export const NameSection = ({
                 </Select.Icon>
               </Select.Trigger>
               <Select.Portal>
-                <Select.Content className="bg-slate-400 text-white rounded-lg cursor-pointer shadow-lg h-fit">
+                <Select.Content className="bg-slate-400 text-white rounded-lg cursor-pointer shadow-lg h-[100px]">
                   <Select.ScrollUpButton>
                     <ChevronUpIcon />
                   </Select.ScrollUpButton>
