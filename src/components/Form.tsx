@@ -36,25 +36,28 @@ export default function Form({
   }
   return (
     <>
-      <div
+      {/* <div
         style={{ border: '1px solid green' }}
         className="h-full max-w-[880px] min-w-[560px] self-center"
+      > */}
+      <form
+        style={{ border: '1px solid red' }}
+        className="h-full full max-w-[880px] min-w-[560px]"
       >
-        <form style={{ border: '1px solid red' }} className="h-full">
-          <CheckboxSection
-            selectedBorrowers={selectedBorrowers}
-            setSelectedBorrowers={setSelectedBorrowers}
-          />
-          <NameSection
-            name={name}
-            setName={setName}
-            value={value}
-            setValue={setValue}
-          />
-          <EscrowSection setSelected={setSelected} />
-          <SubmitSection onSubmit={handleSubmit} />
-        </form>
-      </div>
+        <CheckboxSection
+          selectedBorrowers={selectedBorrowers}
+          setSelectedBorrowers={setSelectedBorrowers}
+        />
+        <NameSection
+          name={name}
+          setName={setName}
+          value={value}
+          setValue={setValue}
+        />
+        <EscrowSection selected={selected} setSelected={setSelected} />
+        <SubmitSection onSubmit={handleSubmit} />
+      </form>
+      {/* </div> */}
     </>
   )
 }

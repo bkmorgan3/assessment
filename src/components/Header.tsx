@@ -1,10 +1,10 @@
 import { Button } from '@radix-ui/themes'
 
 type HeaderProps = {
-  setName: React.Dispatch<React.SetStateAction<string>>
+  clearState: () => void
 }
 
-export default function Header({ setName }: HeaderProps) {
+export default function Header({ clearState }: HeaderProps) {
   return (
     <header className="bg-white px-3.5">
       <nav className="py-6">
@@ -14,7 +14,7 @@ export default function Header({ setName }: HeaderProps) {
           </li>
           <li>
             <Button
-              onClick={() => setName('')}
+              onClick={() => clearState()}
               size="3"
               className="text-indigo-700 bg-slate-100 border-transparent cursor-pointer"
               radius="full"

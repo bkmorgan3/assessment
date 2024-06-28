@@ -2,10 +2,11 @@ import * as RadioGroup from '@radix-ui/react-radio-group'
 import * as Label from '@radix-ui/react-label'
 
 type EscrowProps = {
+  selected: string
   setSelected: React.Dispatch<React.SetStateAction<string>>
 }
 
-export const EscrowSection = ({ setSelected }: EscrowProps) => {
+export const EscrowSection = ({ selected, setSelected }: EscrowProps) => {
   return (
     <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[580px] px-8 py-4 mb-4">
       <h2 className="text-2xl mb-4">Section Title</h2>
@@ -18,7 +19,9 @@ export const EscrowSection = ({ setSelected }: EscrowProps) => {
             value="escrowed"
             id="r1"
           >
-            <RadioGroup.Indicator className=" flex justify-center items-center after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-full after:bg-black" />
+            <RadioGroup.Indicator
+              className={`flex justify-center items-center after:content-[''] ${selected && 'after:block after:w-[11px] after:h-[11px] after:rounded-full after:bg-black'}`}
+            />
           </RadioGroup.Item>
           <Label.Root className="pl-2" htmlFor="r1">
             Escrowed
@@ -30,7 +33,9 @@ export const EscrowSection = ({ setSelected }: EscrowProps) => {
             value="non-escrowed"
             id="r2"
           >
-            <RadioGroup.Indicator className=" flex justify-center items-center after:content-[''] after:block after:w-[11px] after:h-[11px] after:rounded-full after:bg-black" />
+            <RadioGroup.Indicator
+              className={`flex justify-center items-center after:content-[''] ${selected && 'after:block after:w-[11px] after:h-[11px] after:rounded-full after:bg-black'}`}
+            />
           </RadioGroup.Item>
           <Label.Root className="pl-2" htmlFor="r2">
             Non-Escrowed

@@ -14,9 +14,16 @@ export default function FormPage() {
   const [selected, setSelected] = useState('')
   const [selectedBorrowers, setSelectedBorrowers] = useState(borrowers)
 
+  const clearState = () => {
+    setName('')
+    setValue('')
+    setSelected('')
+    setSelectedBorrowers(borrowers)
+  }
+
   return (
     <main className="h-screen bg-gray-50  flex flex-col">
-      <Header setName={setName} />
+      <Header clearState={clearState} />
       <Form
         name={name}
         setName={setName}
