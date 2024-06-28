@@ -1,6 +1,10 @@
 import { Button } from '@radix-ui/themes'
 
-export const SubmitSection = ({ onSubmit }) => {
+type SubmitProps = {
+  onSubmit: () => void
+}
+
+export const SubmitSection = ({ onSubmit }: SubmitProps) => {
   return (
     <section className="flex justify-end bg-white p-4 ">
       <Button
