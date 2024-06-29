@@ -13,12 +13,14 @@ export default function FormPage() {
 
   const [selected, setSelected] = useState('')
   const [selectedBorrowers, setSelectedBorrowers] = useState(borrowers)
+  const [error, setError] = useState(false)
 
   const clearState = () => {
     setName('')
     setValue('')
     setSelected('')
     setSelectedBorrowers(borrowers)
+    setError(false)
   }
 
   return (
@@ -33,6 +35,8 @@ export default function FormPage() {
         setValue={setValue}
         selectedBorrowers={selectedBorrowers}
         setSelectedBorrowers={setSelectedBorrowers}
+        error={error}
+        setError={setError}
       />
     </main>
   )

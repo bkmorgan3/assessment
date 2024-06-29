@@ -17,6 +17,8 @@ type FormProps = {
   setSelected: React.Dispatch<React.SetStateAction<string>>
   selectedBorrowers: Borrower[]
   setSelectedBorrowers: React.Dispatch<React.SetStateAction<Borrower[]>>
+  error: boolean
+  setError: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export default function Form({
@@ -28,9 +30,15 @@ export default function Form({
   setValue,
   selectedBorrowers,
   setSelectedBorrowers,
+  error,
+  setError,
 }: FormProps) {
   const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
     e.preventDefault()
+    if (name === '') {
+      setError(true)
+      return
+    }
     console.log(selectedBorrowers, name, value, selected)
   }
   return (
@@ -48,6 +56,8 @@ export default function Form({
           setName={setName}
           value={value}
           setValue={setValue}
+          error={error}
+          setError={setError}
         />
         <EscrowSection selected={selected} setSelected={setSelected} />
         <SubmitSection />

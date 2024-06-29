@@ -13,6 +13,8 @@ type NameSectionProps = {
   value: string
   setName: React.Dispatch<React.SetStateAction<string>>
   setValue: React.Dispatch<React.SetStateAction<string>>
+  error: boolean
+  setError: React.Dispatch<React.SetStateAction<boolean>>
 }
 
 export const PersonalInfoSection = ({
@@ -20,7 +22,13 @@ export const PersonalInfoSection = ({
   setName,
   value,
   setValue,
+  error,
+  setError,
 }: NameSectionProps) => {
+  const handleOnChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setError(false)
+    setName(e.target.value)
+  }
   return (
     <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[580px] px-8 py-4 grow">
       <h2 className="mb-4 text-2xl">Section Title</h2>
@@ -28,11 +36,19 @@ export const PersonalInfoSection = ({
         <div className="2xl:w-1/2 xl:mr-2">
           <Label.Root htmlFor="name">Name</Label.Root>
           <TextField.Root
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => handleOnChange(e)}
             value={name}
             id="name"
             type="text"
           ></TextField.Root>
+          <div className="h-[20px] my-3">
+            {
+              <p className="my-2 text-red-500">
+                {' '}
+                {error ? 'Please fill out payees name' : ''}
+              </p>
+            }
+          </div>
         </div>
 
         <div className="2xl:w-1/2">
@@ -46,24 +62,28 @@ export const PersonalInfoSection = ({
                 </Select.Icon>
               </Select.Trigger>
               <Select.Portal>
-                <Select.Content className="bg-slate-400 text-white rounded-lg cursor-pointer shadow-lg h-[100px]">
+                <Select.Content className="bg-white text-black rounded-lg cursor-pointer shadow-lg h-[80px] w-[150px]">
                   <Select.ScrollUpButton>
                     <ChevronUpIcon />
                   </Select.ScrollUpButton>
                   <Select.Viewport>
                     <Select.Group>
-                      <Select.Item value="Category 1">
-                        <Select.ItemText>Category 1</Select.ItemText>
-                        <Select.ItemIndicator>
-                          <CheckIcon />
-                        </Select.ItemIndicator>
-                      </Select.Item>
-                      <Select.Item value="Category 2">
-                        <Select.ItemText>Category 2</Select.ItemText>
-                        <Select.ItemIndicator>
-                          <CheckIcon />
-                        </Select.ItemIndicator>
-                      </Select.Item>
+                      <div className="flex justify-evenly">
+                        <Select.Item value="Category 1">
+                          <Select.ItemText>Category 1</Select.ItemText>
+                          <Select.ItemIndicator className="inline-flex absolute left-0 w-[25px] justify-center">
+                            <CheckIcon />
+                          </Select.ItemIndicator>
+                        </Select.Item>
+                      </div>
+                      <div className="flex justify-evenly">
+                        <Select.Item value="Category 2">
+                          <Select.ItemText>Category 2</Select.ItemText>
+                          <Select.ItemIndicator className="inline-flex absolute left-0 w-[25px] justify-center">
+                            <CheckIcon />
+                          </Select.ItemIndicator>
+                        </Select.Item>
+                      </div>
                     </Select.Group>
                   </Select.Viewport>
                 </Select.Content>
