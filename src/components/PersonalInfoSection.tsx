@@ -30,7 +30,7 @@ export const PersonalInfoSection = ({
     setName(e.target.value)
   }
   return (
-    <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[580px] px-8 py-4 grow">
+    <section className="bg-white mt-4 rounded-lg m-auto max-w-[880px] min-w-[560px] px-8 py-4 grow">
       <h2 className="mb-4 text-2xl">Section Title</h2>
       <div className="flex flex-col 2xl:flex-row xl:justify-between">
         <div className="2xl:w-1/2 xl:mr-2">
