@@ -13,7 +13,7 @@ export const EscrowSection = ({ selected, setSelected }: EscrowProps) => {
       <p className="font-bold text-xs mb-4">Escrow Status</p>
 
       <RadioGroup.Root className="flex flex-col" onValueChange={setSelected}>
-        <div style={{ display: 'flex', alignItems: 'center' }} className="mb-2">
+        <div className="mb-2 flex items-center">
           <RadioGroup.Item
             className="w-[18px] h-[18px] rounded-full border-2 border-indigo-500/100 border-solid"
             value="escrowed"
@@ -27,7 +27,7 @@ export const EscrowSection = ({ selected, setSelected }: EscrowProps) => {
             Escrowed
           </Label.Root>
         </div>
-        <div style={{ display: 'flex', alignItems: 'center' }}>
+        <div className="flex items-center">
           <RadioGroup.Item
             className="w-[18px] h-[18px] rounded-full border-2 border-indigo-500/100 border-solid"
             value="non-escrowed"
