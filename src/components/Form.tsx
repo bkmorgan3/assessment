@@ -33,7 +33,7 @@ export default function Form({
   error,
   setError,
 }: FormProps) {
-  const handleSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
+  const handleSubmit: React.MouseEventHandler<HTMLButtonElement> = (e) => {
     e.preventDefault()
     if (name === '') {
       setError(true)
@@ -43,10 +43,7 @@ export default function Form({
   }
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start"
-      >
+      <form className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start">
         <CheckboxSection
           selectedBorrowers={selectedBorrowers}
           setSelectedBorrowers={setSelectedBorrowers}
@@ -60,8 +57,8 @@ export default function Form({
           setError={setError}
         />
         <EscrowSection selected={selected} setSelected={setSelected} />
-        <SubmitSection />
       </form>
+      <SubmitSection handleSubmit={handleSubmit} />
     </>
   )
 }
