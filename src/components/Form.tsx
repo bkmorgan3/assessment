@@ -43,25 +43,29 @@ export default function Form({
   }
   return (
     <>
-      <form
-        onSubmit={handleSubmit}
-        className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start"
-      >
-        <CheckboxSection
-          selectedBorrowers={selectedBorrowers}
-          setSelectedBorrowers={setSelectedBorrowers}
-        />
-        <PersonalInfoSection
-          name={name}
-          setName={setName}
-          value={value}
-          setValue={setValue}
-          error={error}
-          setError={setError}
-        />
-        <EscrowSection selected={selected} setSelected={setSelected} />
-        <SubmitSection />
-      </form>
+      <div className="">
+        <form
+          onSubmit={handleSubmit}
+          className="h-full full max-w-[880px] min-w-[560px] mx-auto flex flex-col justify-start"
+          id="borrowers"
+        >
+          <CheckboxSection
+            selectedBorrowers={selectedBorrowers}
+            setSelectedBorrowers={setSelectedBorrowers}
+          />
+          <PersonalInfoSection
+            name={name}
+            setName={setName}
+            value={value}
+            setValue={setValue}
+            error={error}
+            setError={setError}
+          />
+          <EscrowSection selected={selected} setSelected={setSelected} />
+        </form>
+
+        <SubmitSection onSubmit={handleSubmit} />
+      </div>
     </>
   )
 }
