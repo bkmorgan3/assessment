@@ -41,9 +41,9 @@ export const PersonalInfoSection = ({
             id="name"
             type="text"
           ></TextField.Root>
-          <div className="h-[20px] my-3">
+          <div className="h-[20px] my-3 w-1/2">
             {
-              <p className="my-2 text-red-500">
+              <p className="my- text-slate-600 ">
                 {' '}
                 {error ? 'Please fill out payees name' : ''}
               </p>
